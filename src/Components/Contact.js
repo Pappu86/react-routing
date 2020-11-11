@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import './assets/css/bootstrap.min.css';
 
 class Contact extends Component {
-    constructor() {
+    constructor({match}) {
         super();
         this.state={
             postData:{},
-            postResult:""
+            postResult:"",
+            myName:match.params.userName
         }
+
+        console.log("test: ",match.params.userName);
     }
 
     handleChange=(e)=>{
@@ -26,6 +29,7 @@ class Contact extends Component {
     render() {
         return (
             <div className="col-md-12">
+            <h2>My name is {this.state.myName}</h2>
             <form onSubmit={this.onSubmitHandler}>
             <p id="FormDetails">Show Form submitted date</p>
         <label>

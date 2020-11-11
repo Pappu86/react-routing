@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 class About extends Component {
     constructor() {
@@ -19,7 +20,10 @@ class About extends Component {
 
     render() {
         return (
-            < div >This is about page< /div>
+            < div >
+            <p>This is about page</p>
+            <button className="btn btn-primary"><Link to="/Contact/Md.PappuMiahn">Pass parametre by URL</Link></button>
+        </div>
         );
     }
 }

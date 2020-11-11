@@ -3,10 +3,11 @@ import {Route, Switch} from 'react-router-dom';
 import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
+import DestructuringComponent from "./DestructuringAssignment";
 import NotFound from "./NotFound";
 
 class Router extends Component {
-    constructor() {
+    constructor({match}) {
         super();
     }
 
@@ -16,7 +17,8 @@ class Router extends Component {
                 <Switch>
                 <Route exact path="/" component={Home} />
                 <Route  path="/About" component={About} />
-                <Route  path="/Contact" component={Contact} />
+                <Route path="/DestructuringAssignment" component={DestructuringComponent} />
+                <Route  path="/Contact/:userName" component={Contact} />
                 <Route  component={NotFound} />
                 </Switch>
             </div>
